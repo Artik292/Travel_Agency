@@ -18,7 +18,7 @@ $button = new Button();
 $button->set('Log in');
 $button->set(['primary'=>true]);
 $button->set(['size small'=>true]);
-$button->link('login');
+$button->link('login.php');
 $app->add($button);
 
 /* connecting to database */
@@ -50,8 +50,16 @@ $form->onSubmit(function($form) {
 		If ($form->model['password'] == '') {
 		return $form->error('password', "This place can't be empty.");
 	}
+  switch ($form->model['password']) {
+    case 'password':
+    case 'Password':
+    case '12345' :
+    case 'qwerty':
+      return $form->error('password',"Very easy password");
+  }
 	$form->model->save();
-	return $form->success('You were successfully registered');
+	//return $form->success('You were successfully registered');
+  return new \atk4\ui\jsExpression('document.location = "main.php" ');
 });
 
 
