@@ -12,12 +12,6 @@ if (isset($_SESSION)) {
 $app = new \atk4\ui\App('Log in');
 $app->initLayout('Centered');
 
-$button = new Button();
-$button->set('Log out');
-$button->set(['primary'=>true]);
-$button->set(['size big'=>true]);
-$button->link('logout.php');
-$app->add($button);
 session_start();
 
 if (isset($_SESSION['try_admin'])) {
