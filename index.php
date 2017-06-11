@@ -63,6 +63,11 @@ $form->onSubmit(function($form) {
 		If ($form->model['password'] == '') {
 		return $form->error('password', "This place can't be empty.");
 	}
+
+  If ($form->model['name'] == 'admin') {
+    return $form->error('name','admin is not available');
+  }
+
   switch ($form->model['password']) {
     case 'password':
     case 'Password':
@@ -70,6 +75,8 @@ $form->onSubmit(function($form) {
     case 'qwerty':
       return $form->error('password',"Very easy password");
   }
+  session_start();
+  $_SESSION['user_name'] = $form->model['name'] . ' ' . $form->model['surname'];
 	$form->model->save();
 	//return $form->success('You were successfully registered');
   return new \atk4\ui\jsExpression('document.location = "main.php" ');
