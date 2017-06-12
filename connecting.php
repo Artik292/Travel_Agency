@@ -23,5 +23,6 @@ function init() {
 	$this->addField('phone_number');
   $this->addField('email');
   $this->addField('password', ['type'=>'password']);
+  $this->addField('feedback',['enum'=>[1=>'answer',0=>"didn't answer"]]);
 }
 }

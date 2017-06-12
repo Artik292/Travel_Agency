@@ -9,8 +9,17 @@ if (isset($_SESSION)) {
   echo 'work';
 } */
 
+//use \atk4\ui\Button;
+
 $app = new \atk4\ui\App('Log in');
 $app->initLayout('Centered');
+
+$button = new Button();
+$button->set('Log out');
+$button->set(['primary'=>true]);
+$button->set(['size big'=>true]);
+$button->link('logout.php');
+$app->add($button);
 
 session_start();
 
