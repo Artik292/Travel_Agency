@@ -13,9 +13,9 @@ session_start();
 
 //echo $_SESSION['user_name'];
 
-$app->layout->add(['Message','Hello ' . $_SESSION['user_name']]);
+$app->layout->add(['Message', 'Hello '.$_SESSION['user_name']]);
 
-$app->layout->add(['Message','Our company is best in the world']);
+$app->layout->add(['Message', 'Our company is best in the world']);
 
 /*$layout = $app->layout;
 

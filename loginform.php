@@ -1,14 +1,16 @@
 <?php
+
 //namespace ui;
 /**
- * Component implementing our log-in form
+ * Component implementing our log-in form.
  */
 class loginform extends \atk4\ui\Form
 {
-    function init() {
+    public function init()
+    {
         parent::init();
         $this->setModel(clone $this->app->user, ['email', 'password']);
-        $this->onSubmit(function($form) {
+        $this->onSubmit(function ($form) {
             $this->app->user->tryLoadBy('email', $form->model['email']);
             if ($this->app->user['password'] == $form->model['password']) {
                 // Auth successful!
@@ -17,6 +19,7 @@ class loginform extends \atk4\ui\Form
                 return new \atk4\ui\jsExpression('document.location="dashboard.php"');
             } else {
                 $this->app->user->unload();
+
                 return $form->error('password', 'No such user');
             }
         });
