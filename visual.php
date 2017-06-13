@@ -15,10 +15,10 @@ $button->set(['size big'=>true]);
 $button->link('logout.php');
 $app->add($button);
 
-$layout->leftMenu->addItem(['Main page','icon'=>'building'],['main']);
+$layout->leftMenu->addItem(['Main page', 'icon'=>'building'], ['main']);
 
 if ($_SESSION['user_name'] == 'admin') {
-  $layout->leftMenu->addItem(['Users','icon'=>'users'],['admin']);
+    $layout->leftMenu->addItem(['Users', 'icon'=>'users'], ['admin']);
 }
 
-$layout->leftMenu->addItem(['Places','icon'=>'tree'],['places']);
+$layout->leftMenu->addItem(['Places', 'icon'=>'tree'], ['places']);
