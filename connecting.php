@@ -26,3 +26,17 @@ function init() {
   $this->addField('feedback',['enum'=>[1=>'answer',0=>"didn't answer"]]);
 }
 }
+
+class place extends \atk4\data\Model {
+	public $table = 'places';
+
+function init() {
+	parent::init();
+	$this->addField('country');
+	$this->addField('city');
+	$this->addField('departure_date',['type'=>'date']);
+  $this->addField('arrival_date',['type'=>'date']);
+  $this->addField('cost', ['type'=>'money']);
+  $this->addField('free_space',['enum'=>['yes','no']]);
+}
+}
