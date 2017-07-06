@@ -37,6 +37,6 @@ function init() {
 	$this->addField('departure_date',['type'=>'date']);
   $this->addField('arrival_date',['type'=>'date']);
   $this->addField('cost', ['type'=>'money']);
-  $this->addField('free_space',['enum'=>['yes','no']]);
+  $this->addField('free_space'); //,['enum'=>['yes','no']]);
 }
 }
