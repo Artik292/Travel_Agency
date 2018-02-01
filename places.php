@@ -1,7 +1,7 @@
 <?php
 
 require 'vendor/autoload.php';
-require 'connecting.php';
+require 'connection.php';
 
 $app = new \atk4\ui\App('Places for traveling');
 $app->initLayout('Admin');
@@ -9,4 +9,4 @@ $app->initLayout('Admin');
 require 'visual.php';
 
 $grid = $layout->add('CRUD');
-$grid->setModel(new place($db));
+$grid->setModel(new Place($db));
