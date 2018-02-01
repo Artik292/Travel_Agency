@@ -14,11 +14,13 @@ if (isset($_ENV['CLEARDB_DATABASE_URL'])) {
 }
 
 class Place extends \atk4\data\Model {
-	public $table = 'places'; dsfd
+	public $table = 'places';
+  public $name = 'city';
 
 function init() {
 	parent::init();
-	$this->addField('city');
+	$this->addField('name');
+  $this->hasMany('Record', new Record);
 }
 }
 
@@ -30,9 +32,9 @@ function init() {
   $this->addField('name');
   $this->addField('surname');
   $this->addField('phone_number');
-  $this->addField('email');
+  $this->addField('e_mail');
   $this->addField('departure_date',['type'=>'date']);
   $this->addField('arrival_date',['type'=>'date']);
-  $this->hasOne('place_id', new Place)->addTitle();
+  $this->hasOne('places_id', new Place)->addTitle();
 }
 }

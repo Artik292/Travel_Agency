@@ -18,3 +18,5 @@ $app->add($button); */
 $layout->leftMenu->addItem(['Main page','icon'=>'building'],['index']);
 
 $layout->leftMenu->addItem(['Places','icon'=>'tree'],['places']);
+
+$layout->leftMenu->addItem(['Admin','icon'=>'user circle'],['admin']);
