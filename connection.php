@@ -15,11 +15,10 @@ if (isset($_ENV['CLEARDB_DATABASE_URL'])) {
 
 class Place extends \atk4\data\Model {
 	public $table = 'places';
-  public $name = 'city';
 
 function init() {
 	parent::init();
-	$this->addField('name');
+	$this->addField('name',['caption'=>'City']);
   $this->hasMany('Record', new Record);
 }
 }
