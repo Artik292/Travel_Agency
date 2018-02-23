@@ -9,7 +9,7 @@ $app->initLayout('Admin');
 require 'visual.php';
 
 $place=new Place($db);
-$place->load($app->stickyGet('id'));
+$place->load($_GET['id']);
 $record= $place->ref('Record');
 $record->setOrder('name');
 $grid = $app->add('Grid');
